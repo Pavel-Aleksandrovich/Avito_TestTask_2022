@@ -10,7 +10,8 @@ import UIKit
 final class ListEmployeesAssembly {
     
     static func build() -> UIViewController {
-        let presenter = ListEmployeesPresenter()
+        let network = NetworkServices()
+        let presenter = ListEmployeesPresenter(network: network)
         let controller = ListEmployeesViewController(presenter: presenter)
         
         return controller

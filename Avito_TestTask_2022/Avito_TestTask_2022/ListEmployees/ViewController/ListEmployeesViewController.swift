@@ -8,7 +8,7 @@
 import UIKit
 
 protocol IListEmployeesViewController: AnyObject {
-    
+    func reloadData() 
 }
 
 final class ListEmployeesViewController: UIViewController {
@@ -48,18 +48,23 @@ final class ListEmployeesViewController: UIViewController {
 
 extension ListEmployeesViewController: IListEmployeesViewController {
     
+    func reloadData() {
+        tableView.reloadData()
+    }
 }
 
 extension ListEmployeesViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        presenter.numberOfRowsInSection
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ListEmployeesTableCell.id, for: indexPath) as? ListEmployeesTableCell else {
             return UITableViewCell() }
-        print(indexPath.row)
+        
+        cell.setData(index: indexPath.row)
+        print()
         return cell
     }
 }

@@ -15,6 +15,8 @@
 		847415E1291F65A300C4D007 /* ListEmployeesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847415E0291F65A300C4D007 /* ListEmployeesPresenter.swift */; };
 		847415E3291F66A300C4D007 /* ListEmployeesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847415E2291F66A300C4D007 /* ListEmployeesAssembly.swift */; };
 		847415E8291F6B9200C4D007 /* ListEmployeesTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847415E7291F6B9200C4D007 /* ListEmployeesTableCell.swift */; };
+		847415EB291F82F900C4D007 /* NetworkServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847415EA291F82F900C4D007 /* NetworkServices.swift */; };
+		847415EE291FB7CC00C4D007 /* CompanyDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847415ED291FB7CC00C4D007 /* CompanyDTO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		847415E0291F65A300C4D007 /* ListEmployeesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEmployeesPresenter.swift; sourceTree = "<group>"; };
 		847415E2291F66A300C4D007 /* ListEmployeesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEmployeesAssembly.swift; sourceTree = "<group>"; };
 		847415E7291F6B9200C4D007 /* ListEmployeesTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEmployeesTableCell.swift; sourceTree = "<group>"; };
+		847415EA291F82F900C4D007 /* NetworkServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServices.swift; sourceTree = "<group>"; };
+		847415ED291FB7CC00C4D007 /* CompanyDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyDTO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 		847415CA291F62A600C4D007 /* Avito_TestTask_2022 */ = {
 			isa = PBXGroup;
 			children = (
+				847415EF291FB7EF00C4D007 /* DTO */,
+				847415EC291F850500C4D007 /* Network */,
 				847415E5291F67B100C4D007 /* ListEmployees */,
 				847415E4291F67A100C4D007 /* Application */,
 				847415DF291F64AB00C4D007 /* Resources */,
@@ -111,6 +117,22 @@
 				847415E7291F6B9200C4D007 /* ListEmployeesTableCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		847415EC291F850500C4D007 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				847415EA291F82F900C4D007 /* NetworkServices.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		847415EF291FB7EF00C4D007 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				847415ED291FB7CC00C4D007 /* CompanyDTO.swift */,
+			);
+			path = DTO;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,8 +207,10 @@
 			files = (
 				847415E3291F66A300C4D007 /* ListEmployeesAssembly.swift in Sources */,
 				847415E8291F6B9200C4D007 /* ListEmployeesTableCell.swift in Sources */,
+				847415EB291F82F900C4D007 /* NetworkServices.swift in Sources */,
 				847415D0291F62A600C4D007 /* ListEmployeesViewController.swift in Sources */,
 				847415E1291F65A300C4D007 /* ListEmployeesPresenter.swift in Sources */,
+				847415EE291FB7CC00C4D007 /* CompanyDTO.swift in Sources */,
 				847415CC291F62A600C4D007 /* AppDelegate.swift in Sources */,
 				847415CE291F62A600C4D007 /* SceneDelegate.swift in Sources */,
 			);

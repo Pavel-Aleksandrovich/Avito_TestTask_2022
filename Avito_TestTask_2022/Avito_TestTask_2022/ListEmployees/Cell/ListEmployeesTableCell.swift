@@ -34,11 +34,16 @@ final class ListEmployeesTableCell: UITableViewCell {
     }
 }
 
+extension ListEmployeesTableCell {
+    func setData(index: Int) {
+        phoneNumberLabel.text = "\(index)"
+    }
+}
+
 // MARK: - Config Appearance
 private extension ListEmployeesTableCell {
     
     func configAppearance() {
-        
         vStackView.axis = .vertical
         vStackView.alignment = .center
         vStackView.distribution = .fill
@@ -56,8 +61,8 @@ private extension ListEmployeesTableCell {
         NSLayoutConstraint.activate([
             vStackView.leadingAnchor.constraint(equalTo: leadingAnchor),
             vStackView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            vStackView.topAnchor.constraint(equalTo: topAnchor),
-            vStackView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            vStackView.topAnchor.constraint(equalTo: topAnchor, constant: 10),
+            vStackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
         ])
         
         vStackView.addArrangedSubview(nameLabel)
