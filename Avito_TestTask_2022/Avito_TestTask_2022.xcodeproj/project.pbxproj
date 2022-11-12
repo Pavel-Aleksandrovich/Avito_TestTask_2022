@@ -14,6 +14,7 @@
 		847415D8291F62AA00C4D007 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 847415D6291F62AA00C4D007 /* LaunchScreen.storyboard */; };
 		847415E1291F65A300C4D007 /* ListEmployeesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847415E0291F65A300C4D007 /* ListEmployeesPresenter.swift */; };
 		847415E3291F66A300C4D007 /* ListEmployeesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847415E2291F66A300C4D007 /* ListEmployeesAssembly.swift */; };
+		847415E8291F6B9200C4D007 /* ListEmployeesTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847415E7291F6B9200C4D007 /* ListEmployeesTableCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		847415D9291F62AA00C4D007 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		847415E0291F65A300C4D007 /* ListEmployeesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEmployeesPresenter.swift; sourceTree = "<group>"; };
 		847415E2291F66A300C4D007 /* ListEmployeesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEmployeesAssembly.swift; sourceTree = "<group>"; };
+		847415E7291F6B9200C4D007 /* ListEmployeesTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEmployeesTableCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				847415E6291F680600C4D007 /* ViewController */,
+				847415E9291F700C00C4D007 /* Cell */,
 				847415E0291F65A300C4D007 /* ListEmployeesPresenter.swift */,
 				847415E2291F66A300C4D007 /* ListEmployeesAssembly.swift */,
 			);
@@ -100,6 +103,14 @@
 				847415CF291F62A600C4D007 /* ListEmployeesViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		847415E9291F700C00C4D007 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				847415E7291F6B9200C4D007 /* ListEmployeesTableCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,6 +184,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				847415E3291F66A300C4D007 /* ListEmployeesAssembly.swift in Sources */,
+				847415E8291F6B9200C4D007 /* ListEmployeesTableCell.swift in Sources */,
 				847415D0291F62A600C4D007 /* ListEmployeesViewController.swift in Sources */,
 				847415E1291F65A300C4D007 /* ListEmployeesPresenter.swift in Sources */,
 				847415CC291F62A600C4D007 /* AppDelegate.swift in Sources */,
