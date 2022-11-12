@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		847415CC291F62A600C4D007 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847415CB291F62A600C4D007 /* AppDelegate.swift */; };
 		847415CE291F62A600C4D007 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847415CD291F62A600C4D007 /* SceneDelegate.swift */; };
-		847415D0291F62A600C4D007 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847415CF291F62A600C4D007 /* ViewController.swift */; };
-		847415D3291F62A600C4D007 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 847415D1291F62A600C4D007 /* Main.storyboard */; };
+		847415D0291F62A600C4D007 /* ListEmployeesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847415CF291F62A600C4D007 /* ListEmployeesViewController.swift */; };
 		847415D5291F62AA00C4D007 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 847415D4291F62AA00C4D007 /* Assets.xcassets */; };
 		847415D8291F62AA00C4D007 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 847415D6291F62AA00C4D007 /* LaunchScreen.storyboard */; };
+		847415E1291F65A300C4D007 /* ListEmployeesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847415E0291F65A300C4D007 /* ListEmployeesPresenter.swift */; };
+		847415E3291F66A300C4D007 /* ListEmployeesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847415E2291F66A300C4D007 /* ListEmployeesAssembly.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		847415C8291F62A600C4D007 /* Avito_TestTask_2022.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Avito_TestTask_2022.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		847415CB291F62A600C4D007 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		847415CD291F62A600C4D007 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		847415CF291F62A600C4D007 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		847415D2291F62A600C4D007 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		847415CF291F62A600C4D007 /* ListEmployeesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEmployeesViewController.swift; sourceTree = "<group>"; };
 		847415D4291F62AA00C4D007 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		847415D7291F62AA00C4D007 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		847415D9291F62AA00C4D007 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		847415E0291F65A300C4D007 /* ListEmployeesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEmployeesPresenter.swift; sourceTree = "<group>"; };
+		847415E2291F66A300C4D007 /* ListEmployeesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEmployeesAssembly.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,48 @@
 		847415CA291F62A600C4D007 /* Avito_TestTask_2022 */ = {
 			isa = PBXGroup;
 			children = (
-				847415CB291F62A600C4D007 /* AppDelegate.swift */,
-				847415CD291F62A600C4D007 /* SceneDelegate.swift */,
-				847415CF291F62A600C4D007 /* ViewController.swift */,
-				847415D1291F62A600C4D007 /* Main.storyboard */,
+				847415E5291F67B100C4D007 /* ListEmployees */,
+				847415E4291F67A100C4D007 /* Application */,
+				847415DF291F64AB00C4D007 /* Resources */,
+			);
+			path = Avito_TestTask_2022;
+			sourceTree = "<group>";
+		};
+		847415DF291F64AB00C4D007 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				847415D4291F62AA00C4D007 /* Assets.xcassets */,
 				847415D6291F62AA00C4D007 /* LaunchScreen.storyboard */,
 				847415D9291F62AA00C4D007 /* Info.plist */,
 			);
-			path = Avito_TestTask_2022;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		847415E4291F67A100C4D007 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				847415CB291F62A600C4D007 /* AppDelegate.swift */,
+				847415CD291F62A600C4D007 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		847415E5291F67B100C4D007 /* ListEmployees */ = {
+			isa = PBXGroup;
+			children = (
+				847415E6291F680600C4D007 /* ViewController */,
+				847415E0291F65A300C4D007 /* ListEmployeesPresenter.swift */,
+				847415E2291F66A300C4D007 /* ListEmployeesAssembly.swift */,
+			);
+			path = ListEmployees;
+			sourceTree = "<group>";
+		};
+		847415E6291F680600C4D007 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				847415CF291F62A600C4D007 /* ListEmployeesViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +162,6 @@
 			files = (
 				847415D8291F62AA00C4D007 /* LaunchScreen.storyboard in Resources */,
 				847415D5291F62AA00C4D007 /* Assets.xcassets in Resources */,
-				847415D3291F62A600C4D007 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +172,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				847415D0291F62A600C4D007 /* ViewController.swift in Sources */,
+				847415E3291F66A300C4D007 /* ListEmployeesAssembly.swift in Sources */,
+				847415D0291F62A600C4D007 /* ListEmployeesViewController.swift in Sources */,
+				847415E1291F65A300C4D007 /* ListEmployeesPresenter.swift in Sources */,
 				847415CC291F62A600C4D007 /* AppDelegate.swift in Sources */,
 				847415CE291F62A600C4D007 /* SceneDelegate.swift in Sources */,
 			);
@@ -147,14 +183,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		847415D1291F62A600C4D007 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				847415D2291F62A600C4D007 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		847415D6291F62AA00C4D007 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -289,10 +317,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = PZRD3MXDYZ;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Avito_TestTask_2022/Info.plist;
+				INFOPLIST_FILE = Avito_TestTask_2022/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -318,10 +345,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = PZRD3MXDYZ;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Avito_TestTask_2022/Info.plist;
+				INFOPLIST_FILE = Avito_TestTask_2022/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
