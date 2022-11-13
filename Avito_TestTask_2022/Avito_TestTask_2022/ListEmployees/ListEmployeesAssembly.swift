@@ -11,7 +11,12 @@ final class ListEmployeesAssembly {
     
     static func build() -> UIViewController {
         let network = NetworkServices()
-        let presenter = ListEmployeesPresenter(network: network)
+        let userDefaults = UserDefaultsWrapper()
+        let dataParser = DataParser()
+        let interactor = ListEmployeesInteractor(network: network,
+                                                 userDefaults: userDefaults,
+                                                 dataParser: dataParser)
+        let presenter = ListEmployeesPresenter(interactor: interactor)
         let controller = ListEmployeesViewController(presenter: presenter)
         
         return controller

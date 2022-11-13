@@ -17,6 +17,11 @@
 		847415E8291F6B9200C4D007 /* ListEmployeesTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847415E7291F6B9200C4D007 /* ListEmployeesTableCell.swift */; };
 		847415EB291F82F900C4D007 /* NetworkServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847415EA291F82F900C4D007 /* NetworkServices.swift */; };
 		847415EE291FB7CC00C4D007 /* CompanyDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847415ED291FB7CC00C4D007 /* CompanyDTO.swift */; };
+		847415F1291FC00A00C4D007 /* InternetChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847415F0291FC00A00C4D007 /* InternetChecker.swift */; };
+		847415F3291FC03500C4D007 /* ListEmployeesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847415F2291FC03500C4D007 /* ListEmployeesInteractor.swift */; };
+		847415F62920BE6F00C4D007 /* UserDefaultsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847415F52920BE6F00C4D007 /* UserDefaultsWrapper.swift */; };
+		847415FB2920E71B00C4D007 /* DataParserS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847415FA2920E71B00C4D007 /* DataParserS.swift */; };
+		847415FD292128FF00C4D007 /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847415FC292128FF00C4D007 /* UserDefaultsKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +37,11 @@
 		847415E7291F6B9200C4D007 /* ListEmployeesTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEmployeesTableCell.swift; sourceTree = "<group>"; };
 		847415EA291F82F900C4D007 /* NetworkServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServices.swift; sourceTree = "<group>"; };
 		847415ED291FB7CC00C4D007 /* CompanyDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyDTO.swift; sourceTree = "<group>"; };
+		847415F0291FC00A00C4D007 /* InternetChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetChecker.swift; sourceTree = "<group>"; };
+		847415F2291FC03500C4D007 /* ListEmployeesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEmployeesInteractor.swift; sourceTree = "<group>"; };
+		847415F52920BE6F00C4D007 /* UserDefaultsWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsWrapper.swift; sourceTree = "<group>"; };
+		847415FA2920E71B00C4D007 /* DataParserS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataParserS.swift; sourceTree = "<group>"; };
+		847415FC292128FF00C4D007 /* UserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +74,8 @@
 		847415CA291F62A600C4D007 /* Avito_TestTask_2022 */ = {
 			isa = PBXGroup;
 			children = (
-				847415EF291FB7EF00C4D007 /* DTO */,
+				847415F72920BE7800C4D007 /* Storage */,
+				847415F42920BE2500C4D007 /* InternetListener */,
 				847415EC291F850500C4D007 /* Network */,
 				847415E5291F67B100C4D007 /* ListEmployees */,
 				847415E4291F67A100C4D007 /* Application */,
@@ -98,6 +109,7 @@
 				847415E6291F680600C4D007 /* ViewController */,
 				847415E9291F700C00C4D007 /* Cell */,
 				847415E0291F65A300C4D007 /* ListEmployeesPresenter.swift */,
+				847415F2291FC03500C4D007 /* ListEmployeesInteractor.swift */,
 				847415E2291F66A300C4D007 /* ListEmployeesAssembly.swift */,
 			);
 			path = ListEmployees;
@@ -122,7 +134,9 @@
 		847415EC291F850500C4D007 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				847415EF291FB7EF00C4D007 /* DTO */,
 				847415EA291F82F900C4D007 /* NetworkServices.swift */,
+				847415FA2920E71B00C4D007 /* DataParserS.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -133,6 +147,23 @@
 				847415ED291FB7CC00C4D007 /* CompanyDTO.swift */,
 			);
 			path = DTO;
+			sourceTree = "<group>";
+		};
+		847415F42920BE2500C4D007 /* InternetListener */ = {
+			isa = PBXGroup;
+			children = (
+				847415F0291FC00A00C4D007 /* InternetChecker.swift */,
+			);
+			path = InternetListener;
+			sourceTree = "<group>";
+		};
+		847415F72920BE7800C4D007 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				847415F52920BE6F00C4D007 /* UserDefaultsWrapper.swift */,
+				847415FC292128FF00C4D007 /* UserDefaultsKey.swift */,
+			);
+			path = Storage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,12 +237,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				847415E3291F66A300C4D007 /* ListEmployeesAssembly.swift in Sources */,
+				847415FB2920E71B00C4D007 /* DataParserS.swift in Sources */,
 				847415E8291F6B9200C4D007 /* ListEmployeesTableCell.swift in Sources */,
 				847415EB291F82F900C4D007 /* NetworkServices.swift in Sources */,
 				847415D0291F62A600C4D007 /* ListEmployeesViewController.swift in Sources */,
 				847415E1291F65A300C4D007 /* ListEmployeesPresenter.swift in Sources */,
+				847415F3291FC03500C4D007 /* ListEmployeesInteractor.swift in Sources */,
 				847415EE291FB7CC00C4D007 /* CompanyDTO.swift in Sources */,
 				847415CC291F62A600C4D007 /* AppDelegate.swift in Sources */,
+				847415F1291FC00A00C4D007 /* InternetChecker.swift in Sources */,
+				847415FD292128FF00C4D007 /* UserDefaultsKey.swift in Sources */,
+				847415F62920BE6F00C4D007 /* UserDefaultsWrapper.swift in Sources */,
 				847415CE291F62A600C4D007 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

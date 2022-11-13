@@ -8,7 +8,7 @@
 import Foundation
 
 protocol INetworkServices: AnyObject {
-    func loadListEmployees(completion: @escaping (Result<DTO, Error>) -> ())
+    func loadData(completion: @escaping (Result<Data?, Error>) -> ())
 }
 
 final class NetworkServices {
@@ -29,39 +29,18 @@ final class NetworkServices {
 
 extension NetworkServices: INetworkServices {
     
-    func loadListEmployees(completion: @escaping (Result<DTO, Error>) -> ()) {
-        loadData(api: baseApi, completion: completion)
-    }
-}
-
-private extension NetworkServices {
-    
-    func loadData<T: Decodable>(api: String,
-                                completion: @escaping (Result<T, Error>) -> ()) {
+    func loadData(completion: @escaping (Result<Data?, Error>) -> ()) {
         
-        guard let url = URL(string: api)
-        else {
-            return
-        }
+        guard let url = URL(string: baseApi) else { return }
         
         let request = URLRequest(url: url)
         
         session.dataTask(with: request) { data, response, error in
-            if let error = error { print("error")
+            if let error = error {
                 completion(.failure(error))
             }
-            guard let data = data
-            else { print("data")
-                return }
             
-            do {
-                let newData = try JSONDecoder().decode(T.self, from: data)
-                completion(.success(newData))
-            }
-            catch {
-                print("decode error --> \(error.localizedDescription)")
-                completion(.failure(error))
-            }
+            completion(.success(data))
         }.resume()
     }
 }
