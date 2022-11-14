@@ -11,9 +11,11 @@ final class ListEmployeesAssembly {
     
     static func build() -> UIViewController {
         let network = NetworkServices()
+        let internetChecker = InternetChecker()
         let userDefaults = UserDefaultsWrapper()
         let dataParser = DataParser()
         let interactor = ListEmployeesInteractor(network: network,
+                                                 internetChecker: internetChecker,
                                                  userDefaults: userDefaults,
                                                  dataParser: dataParser)
         let presenter = ListEmployeesPresenter(interactor: interactor)

@@ -21,12 +21,6 @@ final class ListEmployeesTableCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         configAppearance()
         makeConstraints()
-        
-        nameLabel.text = "nameLabel"
-        
-        phoneNumberLabel.text = "phoneNumberLabel"
-        
-        skillsLabel.text = "skillsLabel"
     }
     
     required init?(coder: NSCoder) {
@@ -35,8 +29,11 @@ final class ListEmployeesTableCell: UITableViewCell {
 }
 
 extension ListEmployeesTableCell {
-    func setData(index: Int) {
-        phoneNumberLabel.text = "\(index)"
+    
+    func setModel(_ model: ListEmployeesViewModel) {
+        nameLabel.text = model.employeeName
+        phoneNumberLabel.text = model.phoneNumber
+        skillsLabel.text = model.skills
     }
 }
 
@@ -44,6 +41,12 @@ extension ListEmployeesTableCell {
 private extension ListEmployeesTableCell {
     
     func configAppearance() {
+        nameLabel.numberOfLines = 0
+        
+        phoneNumberLabel.numberOfLines = 0
+        
+        skillsLabel.numberOfLines = 0
+        
         vStackView.axis = .vertical
         vStackView.alignment = .center
         vStackView.distribution = .fill

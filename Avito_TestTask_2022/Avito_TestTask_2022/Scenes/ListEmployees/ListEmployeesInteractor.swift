@@ -9,20 +9,22 @@ import Foundation
 
 protocol IListEmployeesInteractor: AnyObject {
     func loadData(completion: @escaping (Result<DTO, Error>) -> ())
-    func setInternetStatusListener(completion: ((Bool) -> ())?)
+    func setInternetStatusListener(completion: @escaping ((Bool) -> ()))
 }
 
 final class ListEmployeesInteractor {
     
     private let network: INetworkServices
-    private let internetChecker = InternetChecker()
+    private let internetChecker: IInternetChecker
     private let userDefaults: IUserDefaultsWrapper
     private let dataParser: IDataParser
     
     init(network: INetworkServices,
+         internetChecker: IInternetChecker,
          userDefaults: IUserDefaultsWrapper,
          dataParser: IDataParser) {
         self.network = network
+        self.internetChecker = internetChecker
         self.userDefaults = userDefaults
         self.dataParser = dataParser
     }
@@ -31,12 +33,6 @@ final class ListEmployeesInteractor {
 extension ListEmployeesInteractor: IListEmployeesInteractor {
     
     func loadData(completion: @escaping (Result<DTO, Error>) -> ()) {
-        let date = userDefaults.object(forKey: .currentDate) as? Date ?? Date()
-        print(date)
-        print(Date())
-        
-        print("isSaveEmployees -> \(userDefaults.isSaved(forKey: .company))")
-        // if Data saved in cache -> load frome cache, else -> load from network
         switch userDefaults.isSaved(forKey: .company) {
         case true:
             loadFromCache(completion: completion)
@@ -45,7 +41,7 @@ extension ListEmployeesInteractor: IListEmployeesInteractor {
         }
     }
     
-    func setInternetStatusListener(completion: ((Bool) -> ())? = nil) {
+    func setInternetStatusListener(completion: @escaping ((Bool) -> ())) {
         internetChecker.setInternetStatusListener(completion: completion)
     }
 }
@@ -55,14 +51,13 @@ private extension ListEmployeesInteractor {
     func loadFromCache(completion: @escaping (Result<DTO, Error>) -> ()) {
         let date = userDefaults.object(forKey: .currentDate) as? Date ?? Date()
         
-        // if caching time is end -> load from network, else -> load from cache
-        switch Date().timeIntervalSince(date) > 30 {
+        switch Date().timeIntervalSince(date) > 3600 {
         case true:
             userDefaults.removeObject(forKey: .company)
             loadFromNetwork(completion: completion)
         case false:
-            let data = userDefaults.object(forKey: .company) as? Data
-            dataParser.decode(data: data, completion: completion)
+            dataParser.decode(data: userDefaults.data(forKey: .company),
+                              completion: completion)
         }
     }
     

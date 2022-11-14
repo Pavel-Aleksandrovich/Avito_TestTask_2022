@@ -18,7 +18,7 @@ final class InternetChecker {
     
     private var networkAvailableHandler: ((Bool) -> ())? = nil
     
-    let queue = DispatchQueue(label: "monitor")
+    private let queue = DispatchQueue(label: "monitor")
     
     init() {
         self.getPathStatus()

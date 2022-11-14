@@ -12,6 +12,7 @@ protocol IUserDefaultsWrapper: AnyObject {
     func removeObject(forKey: UserDefaultsKey)
     func isSaved(forKey: UserDefaultsKey) -> Bool
     func object(forKey: UserDefaultsKey) -> Any?
+    func data(forKey: UserDefaultsKey) -> Data?
 }
 
 final class UserDefaultsWrapper {
@@ -31,6 +32,10 @@ extension UserDefaultsWrapper: IUserDefaultsWrapper {
     
     func object(forKey: UserDefaultsKey) -> Any? {
         userDefaults.object(forKey: forKey.rawValue)
+    }
+    
+    func data(forKey: UserDefaultsKey) -> Data? {
+        userDefaults.data(forKey: forKey.rawValue)
     }
     
     func isSaved(forKey: UserDefaultsKey) -> Bool {
