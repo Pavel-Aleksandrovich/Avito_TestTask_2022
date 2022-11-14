@@ -9,6 +9,7 @@
 - Saved in cache for an hour
 
 ## Stack
+- Swift
 - UIKit
 - VIPER
 - UserDefaults
